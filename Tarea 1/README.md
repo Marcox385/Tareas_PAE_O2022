@@ -6,6 +6,7 @@ El siguiente comando es utilizado para probar la transformación de SCSS a CSS
 npm run styles:dev
 ```
 
-El siguiente comando es utilizado para probar la construcción final de SCSS a CSS ```javascript
+El siguiente comando es utilizado para probar la construcción final de SCSS a CSS
+```javascript
 npm run styles:prod
-``
+```
