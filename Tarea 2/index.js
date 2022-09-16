@@ -1,5 +1,6 @@
 // 727272 - Cordero Hernández, Marco Ricardo; Tarea 2
 const express = require('express');
+const axios = require('axios');
 const path = require('path');
 require('dotenv').config();
 const { engine } = require('express-handlebars');
@@ -8,16 +9,38 @@ const app = express();
 const apiKey = process.env.API_KEY;
 const port = process.env.PORT || 3000;
 
+app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
+
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 // Página principal (búsqueda)
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: "Example App: Home"
-    });
+app.get(['/', '/home', '/index'], (req, res) => {
+    res.render('index');
 })
+
+app.get('/noticias', (req, res) => {
+    // console.log(req.query);
+
+    // res.render('results', {
+    //     searchTerms: req.body
+    // });
+    
+    const searchTerm = encodeURIComponent(req.query.search);
+
+    axios.get(`https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=${apiKey}`)
+        .then(response => {
+            if (req.query.jsonRes === 'on') {
+                res.json(response.data);
+            } else {
+                console.log(response.data.articles);
+                res.json({mamaste: 20});
+            }            
+        }).catch(
+            err => res.json({mamaste: 20})
+        )
+});
 
 app.listen(port, () => {
     console.log('App is running in port 3000');

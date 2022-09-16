@@ -1,0 +1,10 @@
+div {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 90vh;
+}
+
+form {
+    text-align: center;
+}
