@@ -12,7 +12,7 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-// Página principal
+// Página principal (búsqueda)
 app.get('/', (req, res) => {
     res.render('index', {
         title: "Example App: Home"
