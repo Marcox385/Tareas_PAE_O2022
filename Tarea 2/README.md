@@ -11,7 +11,7 @@ Similar al anterior, el scrip siguiente habilita el servidor y escucha cambios e
 npm run dev
 ```
 
-Para este ejercicio, adicional a la exclusión de _/node_modules_, se ha excluído el archivo _.env_  
+Para este ejercicio, adicional a la exclusión de _/node_modules_, se ha excluído el archivo _.env_
 dentro del cual se encuentra la llave para acceder a la API de [News API](https://newsapi.org/).  
 En caso de desear replicar la funcionalidad de esta tarea, la sintaxis del archivo anterior debe ser
 ```
