@@ -1,0 +1,7 @@
+<h3>{{noticia.title}}</h3>
+<p>{{noticia.description}}</p>
+<hr *ngIf="noticia.title">
+<p>{{noticia.content}}</p>
+<img src="{{noticia.urlToImage}}" alt=""><br>
+
+<button (click)="clearNoticia()" [disabled]="!noticia.title">Limpiar</button>
