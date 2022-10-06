@@ -1,0 +1,11 @@
+@import '../../../../styles.scss';
+
+a {
+    color: $base-color;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.active {
+    background-color: lightgrey;
+}

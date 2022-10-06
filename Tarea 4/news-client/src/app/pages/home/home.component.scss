@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+
+* {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    padding: 15px;
+}
+
+p:first-child {
+    padding-top: 80px;
+}
